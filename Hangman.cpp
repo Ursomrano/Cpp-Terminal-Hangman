@@ -12,9 +12,12 @@ using namespace std;
 
 //Opens an image of the current Hangman.
 int Graphic(int peices){
+    //put the entire directory that you have these files in here
+    string directory = "";
+    
     string bodyParts[] {"None.jpg", "Head.jpg", "Body.jpg", "RightLeg.jpg", "LeftLeg.jpg", "RightArm.jpg", "LeftArm.jpg"};
     ostringstream fullCommand;
-    fullCommand << "jp2a /home/ursomrano71/Documents/Programs/C++/HangmanProject/" << bodyParts[peices] << " --invert --height=25 --border";
+    fullCommand << "jp2a" << directory << bodyParts[peices] << " --invert --height=25 --border";
     string fullCommandString = fullCommand.str();
     system(fullCommandString.c_str());
     return 0;
